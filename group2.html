@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        .wrapper {
+            padding: 30px;
+            width: 500px;
+        }
+
+        .info {
+            position: fixed;
+            background: green;
+            color: white;
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">Images loaded: <b id="loaded-images">0</b></div>
+    <div class="wrapper">
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+        <img class="b-lazy" data-src="img/01.jpg"
+            src="img/01.jpg" />
+    </div>
+    <script src="https://rawgithub.com/dinbror/blazy/master/blazy.min.js"></script>
+    <script>
+        // the code
+        var bLazy = new Blazy({
+            success: function () {
+                updateCounter();
+            },
+        });
+
+        // not needed, only here to illustrate amount of loaaded images
+        var imageLoaded = 0;
+        var eleCountLoadedImages = document.getElementById("loaded-images");
+
+        function updateCounter() {
+            imageLoaded++;
+            eleCountLoadedImages.innerHTML = imageLoaded;
+        }
+    </script>
+</body>
+
+</html>
